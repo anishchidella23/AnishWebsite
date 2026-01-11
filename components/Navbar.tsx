@@ -21,19 +21,19 @@ export default function Navbar() {
         </Link>
 
         <div className="flex gap-4 text-sm">
-          {links.map((l) => {
-            const active = pathname === l.href;
-            return (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`transition ${active ? "text-slate-900 dark:text-white" : "text-slate-500 hover:text-slate-900"
-                  }`}
-              >
-                {l.label}
-              </Link>
-            );
-          })}
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`transition ${
+                pathname === l.href
+                  ? "text-slate-900 dark:text-white"
+                  : "text-slate-500 hover:text-slate-900"
+              }`}
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>

@@ -1,25 +1,36 @@
 const projects = [
     {
-      name: "BudgetBud",
-      tagline: "Personal finance / budgeting app",
+      name: "Jiggy — Modern Day Just Dance",
+      tagline: "Real-time computer vision dance evaluation platform",
       bullets: [
-        "Built budgeting flows: categories, recurring expenses, insights dashboard.",
-        "Improved UX with accessibility + mobile-first layouts.",
-        "Add a metric here (e.g., tested with N users, reduced load time by X%).",
+        "Built a real-time web app comparing user dance movements to reference videos, improving movement accuracy by 30% and learning speed by 25%.",
+        "Implemented pose detection and motion analysis using MediaPipe, NumPy, and Pandas with joint-angle thresholding.",
+        "Developed real-time video streaming and feedback using Flask, Socket.IO, WebRTC, and JavaScript, supporting 10+ concurrent users.",
       ],
-      tags: ["React Native", "TypeScript", "Firebase"],
-      links: { demo: "#", code: "#" },
+      tags: ["Python", "MediaPipe", "Flask", "WebRTC", "Socket.IO"],
+      links: {
+        code: "https://github.com/anishchidella23",
+      },
     },
     {
-      name: "Professor Review Sentiment",
-      tagline: "NLP classification pipeline",
+      name: "SmallC Compiler Optimizer & Type Checker",
+      tagline: "OCaml-based compiler with static analysis",
       bullets: [
-        "Fine-tuned a Transformer model for sentiment prediction.",
-        "Evaluated with F1/precision/recall + confusion matrix.",
-        "Add a metric here (e.g., F1=0.84 on validation).",
+        "Implemented a lexer and CFG parser in OCaml to generate an AST for a toy version of C.",
+        "Built constant folding, propagation, and branch folding optimizations.",
+        "Integrated static type inference to catch semantic errors and division-by-zero at compile time.",
       ],
-      tags: ["Python", "PyTorch", "Transformers"],
-      links: { code: "#" },
+      tags: ["OCaml", "Compilers", "Static Analysis"],
+    },
+    {
+      name: "Auto-Hug Device for Sensory Overload",
+      tagline: "Wearable assistive hardware device",
+      bullets: [
+        "Engineered a wearable device providing automated deep pressure therapy for individuals with sensory processing disorders.",
+        "Programmed automated compression sequences using Arduino, controlling pressure and timing.",
+        "Conducted user testing and refined hardware design to improve comfort and usability.",
+      ],
+      tags: ["Arduino", "Embedded Systems", "Human-Centered Design"],
     },
   ];
   
@@ -28,7 +39,8 @@ const projects = [
       <div className="space-y-6">
         <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
         <p className="max-w-2xl text-slate-600">
-          A selection of projects I’ve built. Each includes what I did and the impact.
+          Selected projects highlighting full-stack engineering, systems work, and
+          applied computer vision.
         </p>
   
         <div className="grid gap-4 md:grid-cols-2">
@@ -39,19 +51,29 @@ const projects = [
                   <h2 className="text-lg font-semibold">{p.name}</h2>
                   <p className="text-sm text-slate-600">{p.tagline}</p>
                 </div>
-                <div className="flex gap-3 text-sm">
-                  {p.links.demo && <a className="underline" href={p.links.demo} target="_blank">Demo</a>}
-                  {p.links.code && <a className="underline" href={p.links.code} target="_blank">Code</a>}
-                </div>
+                {p.links?.code && (
+                  <a
+                    className="text-sm underline"
+                    href={p.links.code}
+                    target="_blank"
+                  >
+                    Code
+                  </a>
+                )}
               </div>
   
               <ul className="mt-3 list-disc space-y-1 pl-5 text-slate-600">
-                {p.bullets.map((b) => <li key={b}>{b}</li>)}
+                {p.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
               </ul>
   
               <div className="mt-4 flex flex-wrap gap-2">
                 {p.tags.map((t) => (
-                  <span key={t} className="rounded-full border px-3 py-1 text-xs text-slate-600">
+                  <span
+                    key={t}
+                    className="rounded-full border px-3 py-1 text-xs text-slate-600"
+                  >
                     {t}
                   </span>
                 ))}
