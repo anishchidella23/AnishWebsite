@@ -1,25 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
-  title: "Anish Chidella | Software Engineer",
-  description:
-    "Software engineering portfolio of Anish Chidella. Full-stack, systems, and computer vision projects.",
+  title: "Anish Chidella | Portfolio",
+  description: "Personal site showcasing projects, experience, and contact info.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main className="mx-auto max-w-5xl px-5 py-10">
-          {children}
-        </main>
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-animated">
+        <ThemeProvider>
+          <Navbar />
+          <main className="mx-auto max-w-5xl px-5 py-10">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
