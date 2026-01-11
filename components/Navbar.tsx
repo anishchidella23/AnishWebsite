@@ -73,11 +73,10 @@ export default function Navbar() {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className={`relative rounded-full px-3 py-1.5 transition ${
-                    active
+                  className={`relative rounded-full px-3 py-1.5 transition ${active
                       ? "text-black dark:text-white"
                       : "text-black/65 hover:text-black dark:text-white/70 dark:hover:text-white"
-                  }`}
+                    }`}
                 >
                   {active && (
                     <span className="absolute inset-0 -z-10 rounded-full bg-black/5 dark:bg-white/10" />
